@@ -1,11 +1,12 @@
-const html = document.querySelector('html');
+let students_counter = 0;
+
+const html = document.getElementById('html');
 const checkbox = html.querySelector('#switch_dark-mode');
 checkbox.addEventListener('change', function(){
     html.classList.toggle('dark-mode');
-})
+});
 
-const inputs_container = html.querySelector('.inputs_container');
-const inputs = inputs_container.querySelectorAll('input');
+const inputs = html.querySelectorAll('.inputs_container input');
 inputs.forEach(input => {
     input.addEventListener("keyup", function(event){
         if(event.key === "Enter"){
@@ -15,7 +16,6 @@ inputs.forEach(input => {
 });
 
 function addStudent(){
-    let counter = 0;
     let name = html.querySelector("#nome").value;
     let n1 = html.querySelector("#nota_01").value;
     let n2 = html.querySelector("#nota_02").value;
@@ -52,13 +52,14 @@ function addStudent(){
                 result = "Reprovado";
             }
 
-            tbody.innerHTML += `<tr id='aluno_${counter}'> 
-            <th scope='row' class='th_nome'> ${name} </th> 
+            tbody.innerHTML += `<tr id='aluno_${students_counter}'> 
+            <th scope='row' class='th_nome-aluno'> ${name} </th> 
             <td class='td_nota-01'> ${n1} </td> 
             <td class='td_nota-02'> ${n2} </td> 
             <td class='td_media'> ${average} </td> 
-            <td class='td_result'> ${result} </td> </tr>`;
-            counter += 1;
+            <td class='td_result'> ${result} </td>
+            <td class='td_actions'> <span style='cursor: pointer' class='material-symbols-outlined' onclick='deleteStudent(${students_counter})'>delete</span></tr>`;
+            students_counter += 1;
 
             html.querySelector("#nome").value = "";
             html.querySelector("#nota_01").value = "";
@@ -90,4 +91,10 @@ function showToast(message) {
 
 function hasNumber(str) {
     return /\d/.test(str);
+}
+
+function deleteStudent(id){
+    let student = html.querySelector("#aluno_"+id);
+    student.remove();
+    showToast("Aluno(a) removido(a) ✅");
 }

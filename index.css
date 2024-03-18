@@ -14,12 +14,14 @@
     --main-bgBtn: #00ad3d;
     --main-bgInput: #fff;
     --main-bgSwitch: #dbdbdb;
+    --main-bgModal: #000;
 
     --main-textColor: #000;
     --main-btnColor: #fff;
     --main-borderColor: #000;
     --main-toastColor: #fff;
     --main-switchColor: #999999;
+    --main-modalColor: #fff;
 
     --main-btnHover: #00a03d;
 }
@@ -36,6 +38,8 @@
     --main-btnColor: #d4d4d4;
     --main-borderColor: #888888;
     --main-toastColor: #fff;
+
+    --main-btnHover: #00ad3d;
 }
 
 body{
@@ -108,13 +112,14 @@ body{
 }
 
 #toast-sleep{
+    text-align: center;
     position: absolute;
     top: 2.09%;
     left: -400px;
     border-radius: 0px 3px 3px 0px;
     
     padding: 3px 5px;
-    max-width: 225px;
+    width: 225px;
 
     font-size: .9em;
     font-weight: bold;
@@ -123,13 +128,14 @@ body{
 }
 
 #toast-called{
+    text-align: center;
     position: absolute;
     top: 2.09%;
     left: -400px;
     border-radius: 0px 3px 3px 0px;
 
     padding: 3px 5px;
-    max-width: 225px;
+    width: 225px;
 
     font-size: .9em;
     font-weight: bold;
@@ -140,13 +146,14 @@ body{
 }
 
 #toast-back{
+    text-align: center;
     position: absolute;
     top: 2.09%;
     left: -400px;
     border-radius: 0px 3px 3px 0px;
 
     padding: 3px 5px;
-    max-width: 225px;
+    width: 225px;
     
     font-size: .9em;
     font-weight: bold;
@@ -221,8 +228,7 @@ table > thead > tr > th{
     font-size: 1.15em;
     font-weight: bold;
 
-    padding: 4px 50px;
-
+    padding: 5px 0px;
     background-color: var(--main-bgColumn);
     color: var(--main-textColor);
 
@@ -255,5 +261,25 @@ table > tbody > tr > td{
 }
 
 .th_nome{
+    width: 40%;
+}
+
+.th_nota{
+    width: 10%;
+}
+
+.th_media{
+    width: 10%;
+}
+
+.th_result{
+    width: 20%;
+}
+
+.th_actions{
+    width: 17.5%;
+}
+
+.th_nome-aluno{
     font-weight: bold;
 }
