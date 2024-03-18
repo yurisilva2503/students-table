@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluno</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="https://www.ifmg.edu.br/ceadop3/imagens/aluno.png/@@images/image.png" type="image/png">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="inputs_container">
+            <input type="text" id="nome" placeholder="Nome" autofocus required>
+            <input type="number" min="0" max="10" id="nota_01" placeholder="Nota 01" required>
+            <input type="number" min="0" max="10" id="nota_02" placeholder="Nota 02" required>
+            <button id="btn_add-student" onclick="addStudent()">Adicionar</button>
+        </div>
+        <div class="table_container">
+            <p id="toast-sleep"></p> 
+            <input type="checkbox" id="switch_dark-mode">       
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">1ª Av</th>
+                        <th scope="col">2ª Av</th>
+                        <th scope="col">Média</th>
+                        <th scope="col">Resultado</th>
+                        <th scope="col">-</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<script src="index.js"></script>
+</body>
+</html>
