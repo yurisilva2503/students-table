@@ -1,9 +1,20 @@
-let students_counter = 0;
+const html = document.documentElement;
+const checkbox = document.querySelector('#switch_dark-mode');
 
-const html = document.getElementById('html');
-const checkbox = html.querySelector('#switch_dark-mode');
-checkbox.addEventListener('change', function(){
-    html.classList.toggle('dark-mode');
+function applyTheme() {
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    html.classList.add('dark-mode');
+    checkbox.checked = true;
+  } else {
+    html.classList.remove('dark-mode');
+    checkbox.checked = false;
+  }
+}
+
+applyTheme();
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+checkbox.addEventListener('change', function() {
+  html.classList.toggle('dark-mode');
 });
 
 const inputs = html.querySelectorAll('.inputs_container input');
@@ -15,10 +26,15 @@ inputs.forEach(input => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const studentsData = JSON.parse(localStorage.getItem('studentsData')) || [];
+    studentsData.forEach(student => renderStudent(student));
+});
+
 function addStudent(){
-    let name = html.querySelector("#nome").value;
-    let n1 = html.querySelector("#nota_01").value;
-    let n2 = html.querySelector("#nota_02").value;
+    let name = html.querySelector("#name").value;
+    let n1 = html.querySelector("#n1").value;
+    let n2 = html.querySelector("#n2").value;
 
     n1 = n1.replace(',', '.');
     n2 = n2.replace(',', '.');
@@ -43,30 +59,38 @@ function addStudent(){
             let average = calcAverage(n1,n2);
             let result = "";
 
-            let table = html.querySelector('#table');
-            let tbody = table.querySelector("tbody");
-
             if(average >= 7 && average <= 10){
                 result = "Aprovado";
             } else if(average < 7){
                 result = "Reprovado";
             }
+            const id = generateUniqueId();
+            const student = { id, name, n1, n2, average, result };
+            renderStudent(student);
 
-            tbody.innerHTML += `<tr id='aluno_${students_counter}'> 
-            <th scope='row' class='th_nome-aluno'> ${name} </th> 
-            <td class='td_nota-01'> ${n1} </td> 
-            <td class='td_nota-02'> ${n2} </td> 
-            <td class='td_media'> ${average} </td> 
-            <td class='td_result'> ${result} </td>
-            <td class='td_actions'> <span style='cursor: pointer' class='material-symbols-outlined' onclick='deleteStudent(${students_counter})'>delete</span></tr>`;
-            students_counter += 1;
+            const studentsData = JSON.parse(localStorage.getItem('studentsData')) || [];
+            studentsData.push(student);
+            localStorage.setItem('studentsData', JSON.stringify(studentsData));
 
-            html.querySelector("#nome").value = "";
-            html.querySelector("#nota_01").value = "";
-            html.querySelector("#nota_02").value = "";
+            html.querySelector("#name").value = "";
+            html.querySelector("#n1").value = "";
+            html.querySelector("#n2").value = "";
             showToast("Aluno(a) adicionado(a) ✅");
         }
     }
+}
+
+function renderStudent(student) {
+    let table = html.querySelector('#table');
+    let tbody = table.querySelector("tbody");
+
+    tbody.innerHTML += `<tr id='aluno_${student.id}'> 
+        <th scope='row' class='th_name-student'> ${student.name} </th> 
+        <td class='td_nota-01'> ${student.n1} </td> 
+        <td class='td_nota-02'> ${student.n2} </td> 
+        <td class='td_media'> ${student.average} </td> 
+        <td class='td_result'> ${student.result} </td>
+        <td class='td_actions'> <span style='cursor: pointer' class='material-symbols-outlined' onclick='deleteStudent("${student.id}")'>delete</span></tr>`;
 }
 
 function calcAverage(...args){
@@ -93,8 +117,23 @@ function hasNumber(str) {
     return /\d/.test(str);
 }
 
+function generateUniqueId() {
+    const array = new Uint32Array(8);
+    crypto.getRandomValues(array);
+    let str = '';
+    for (let i = 0; i < array.length; i++) {
+        str += (i < 2 || i > 5 ? '' : '-') + array[i].toString(16).slice(-4);
+    }
+    return str;
+}
+
 function deleteStudent(id){
-    let student = html.querySelector("#aluno_"+id);
-    student.remove();
+    let studentRow = html.querySelector("#aluno_"+id);
+    studentRow.remove();
+
+    const studentsData = JSON.parse(localStorage.getItem('studentsData')) || [];
+    const updatedStudentsData = studentsData.filter(student => student.id !== id);
+    localStorage.setItem('studentsData', JSON.stringify(updatedStudentsData));
+
     showToast("Aluno(a) removido(a) ✅");
 }

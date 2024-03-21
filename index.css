@@ -62,7 +62,7 @@ body{
     justify-content: start;
     align-items: center;
 
-    width: 65vw;
+    width: 60vw;
     height: 96vh;
 }
 
@@ -260,15 +260,15 @@ table > tbody > tr > td{
     border: 1px solid var(--main-borderColor);
 }
 
-.th_nome{
+.th_name{
     width: 40%;
 }
 
-.th_nota{
+.th_grade{
     width: 10%;
 }
 
-.th_media{
+.th_average{
     width: 10%;
 }
 
@@ -280,6 +280,6 @@ table > tbody > tr > td{
     width: 17.5%;
 }
 
-.th_nome-aluno{
+.th_name-student{
     font-weight: bold;
 }

@@ -11,9 +11,9 @@
 <body>
     <div class="wrapper">
         <div class="inputs_container">
-            <input type="text" id="nome" placeholder="Nome" autofocus required>
-            <input type="number" min="0" max="10" id="nota_01" placeholder="Nota 01" required>
-            <input type="number" min="0" max="10" id="nota_02" placeholder="Nota 02" required>
+            <input type="text" id="name" placeholder="Nome" autofocus required>
+            <input type="number" min="0" max="10" id="n1" placeholder="Nota 1ªAv" required>
+            <input type="number" min="0" max="10" id="n2" placeholder="Nota 2ªAv" required>
             <button id="btn_add-student" onclick="addStudent()">Adicionar</button>
         </div>
         <div class="table_container">
@@ -22,10 +22,10 @@
             <table id="table">
                 <thead>
                     <tr>
-                        <th scope="col" class="th_nome">Nome</th>
-                        <th scope="col" class="th_nota">1ª Av</th>
-                        <th scope="col" class="th_nota">2ª Av</th>
-                        <th scope="col" class="th_media">Média</th>
+                        <th scope="col" class="th_name">Nome</th>
+                        <th scope="col" class="th_grade">1ª Av</th>
+                        <th scope="col" class="th_grade">2ª Av</th>
+                        <th scope="col" class="th_average">Média</th>
                         <th scope="col" class="th_result">Resultado</th>
                         <th scope="col" class="th_actions">-</th>
                     </tr>
