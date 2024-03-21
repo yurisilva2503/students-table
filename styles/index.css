@@ -233,9 +233,6 @@ table > thead > tr > th{
     color: var(--main-textColor);
 
     border: 1px solid var(--main-borderColor);
-
-    position: sticky;
-    top: 0;
 }
 
 table > tbody > tr > th{

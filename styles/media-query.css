@@ -1,0 +1,727 @@
+@media screen and (min-width: 200px) and (max-width: 280px){
+    .wrapper{
+        width: 95vw;
+    }
+
+    .inputs_container > input{
+        font-size: .9em;
+    }
+
+    #toast-sleep{
+        top: 2%;
+        width: 200px;
+        padding: 3px 0px;
+        font-size: .7em;
+    }
+
+    #toast-back{
+        top: 2%;
+        width: 200px;
+        padding: 3px 0px;
+        font-size: .7em;
+    }
+
+    #toast-called{
+        top: 2%;
+        width: 200px;
+        padding: 3px 0px;
+        font-size: .7em;
+    }
+
+    #btn_add-student{
+        font-size: .6em;
+    }
+
+    #switch_dark-mode{
+        position: relative;
+        top: -5px;
+        left: calc(100% - 160px);
+    }
+
+    table > thead > tr > th{
+        font-size: .8em;
+        padding: 3px 5px;
+    }
+
+    table > tbody > tr > th{
+        font-size: .75em;
+        padding: 3px 0px;
+    }
+
+    table > tbody > tr > td{
+        font-size: .75em;
+        padding: 3px 0px;    
+    }
+
+    .th_name{
+        width: 30%; 
+    }
+    
+    .th_grade{
+        width: 20%;
+    }
+    
+    .th_average{
+        width: 10%;
+    }
+    
+    .th_result{
+        width: 10%;
+    }
+    
+    .th_actions{
+        width: 10%;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 400px){
+    .wrapper{
+        width: 95vw;
+    }
+
+    .inputs_container > input{
+        font-size: .9em;
+    }
+
+    #toast-sleep{
+        top: 2%;
+        width: 200px;
+        padding: 3px 0px;
+        font-size: .7em;
+    }
+
+    #toast-back{
+        top: 2%;
+        width: 200px;
+        padding: 3px 0px;
+        font-size: .7em;
+    }
+
+    #toast-called{
+        top: 2%;
+        width: 200px;
+        padding: 3px 0px;
+        font-size: .7em;
+    }
+
+    #btn_add-student{
+        font-size: .6em;
+    }
+
+    #switch_dark-mode{
+        position: relative;
+        top: -5px;
+        left: calc(100% - 207px);
+    }
+
+    table > thead > tr > th{
+        font-size: .8em;
+        padding: 3px 5px;
+    }
+
+    table > tbody > tr > th{
+        font-size: .75em;
+        padding: 3px 0px;
+    }
+
+    table > tbody > tr > td{
+        font-size: .75em;
+        padding: 3px 0px;    
+    }
+
+    .th_name{
+        width: 30%; 
+    }
+    
+    .th_grade{
+        width: 20%;
+    }
+    
+    .th_average{
+        width: 10%;
+    }
+    
+    .th_result{
+        width: 10%;
+    }
+    
+    .th_actions{
+        width: 10%;
+    }
+}
+
+@media screen and (min-width: 401px) and (max-width: 500px){
+    .wrapper{
+        width: 95vw;
+    }
+
+    .inputs_container > input{
+        font-size: .9em;
+    }
+
+    #toast-sleep{
+        top: 2%;
+        width: 200px;
+        padding: 3px 0px;
+        font-size: .7em;
+    }
+
+    #toast-back{
+        top: 2%;
+        width: 200px;
+        padding: 3px 0px;
+        font-size: .7em;
+    }
+
+    #toast-called{
+        top: 2%;
+        width: 200px;
+        padding: 3px 0px;
+        font-size: .7em;
+    }
+
+    #btn_add-student{
+        font-size: .6em;
+    }
+
+    #switch_dark-mode{
+        position: relative;
+        top: -5px;
+        left: calc(100% - 220px);
+    }
+
+    table > thead > tr > th{
+        font-size: .8em;
+        padding: 3px 5px;
+    }
+
+    table > tbody > tr > th{
+        font-size: .75em;
+        padding: 3px 0px;
+    }
+
+    table > tbody > tr > td{
+        font-size: .75em;
+        padding: 3px 0px;    
+    }
+
+    .th_name{
+        width: 30%; 
+    }
+    
+    .th_grade{
+        width: 20%;
+    }
+    
+    .th_average{
+        width: 10%;
+    }
+    
+    .th_result{
+        width: 10%;
+    }
+    
+    .th_actions{
+        width: 10%;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 600px){
+    .wrapper{
+        width: 95vw;
+    }
+
+    .inputs_container > input{
+        font-size: .9em;
+    }
+
+    #toast-sleep{
+        top: 2%;
+        width: 200px;
+        padding: 3px 0px;
+        font-size: .7em;
+    }
+
+    #toast-back{
+        top: 2%;
+        width: 200px;
+        padding: 3px 0px;
+        font-size: .7em;
+    }
+
+    #toast-called{
+        top: 2%;
+        width: 200px;
+        padding: 3px 0px;
+        font-size: .7em;
+    }
+
+    #btn_add-student{
+        font-size: .6em;
+    }
+
+    #switch_dark-mode{
+        position: relative;
+        top: -5px;
+        left: calc(100% - 285px);
+    }
+
+    table > thead > tr > th{
+        font-size: .8em;
+        padding: 3px 5px;
+    }
+
+    table > tbody > tr > th{
+        font-size: .75em;
+        padding: 3px 0px;
+    }
+
+    table > tbody > tr > td{
+        font-size: .75em;
+        padding: 3px 0px;    
+    }
+
+    .th_name{
+        width: 30%; 
+    }
+    
+    .th_grade{
+        width: 20%;
+    }
+    
+    .th_average{
+        width: 10%;
+    }
+    
+    .th_result{
+        width: 10%;
+    }
+    
+    .th_actions{
+        width: 10%;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 810px){
+    .wrapper{
+        width: 95vw;
+    }
+
+    .inputs_container > input{
+        font-size: 1em;
+    }
+
+    #toast-sleep{
+        top: 1%;
+        width: 200px;
+        padding: 3px 0px;
+        font-size: 1em;
+    }
+
+    #toast-back{
+        top: 1%;
+        width: 200px;
+        padding: 3px 0px;
+        font-size: 1em;
+    }
+
+    #toast-called{
+        top: 1%;
+        width: 200px;
+        padding: 3px 0px;
+        font-size: 1em;
+    }
+
+    #btn_add-student{
+        font-size: 1em;
+    }
+
+    #switch_dark-mode{
+        position: relative;
+        top: -5px;
+        left: calc(100% - 390px);
+    }
+
+    table > thead > tr > th{
+        font-size: 1.2em;
+        padding: 4px 5px;
+    }
+
+    table > tbody > tr > th{
+        font-size: 1.15em;
+        padding: 4px 5px;
+    }
+
+    table > tbody > tr > td{
+        font-size: 1.15em;
+        padding: 4px 5px;    
+    }
+
+    .th_name{
+        width: 30%; 
+    }
+    
+    .th_grade{
+        width: 20%;
+    }
+    
+    .th_average{
+        width: 15%;
+    }
+    
+    .th_result{
+        width: 15%;
+    }
+    
+    .th_actions{
+        width: 20%;
+    }
+}
+
+@media screen and (min-width: 820px) and (max-width: 840px){
+    .wrapper{
+        width: 95vw;
+    }
+
+    .inputs_container > input{
+        font-size: 1.35em;
+    }
+
+    #toast-sleep{
+        top: 1%;
+        width: 300px;
+        padding: 3px 5px;
+        font-size: 1.2em;
+    }
+
+    #toast-back{
+        top: 1%;
+        width: 300px;
+        padding: 3px 5px;
+        font-size: 1.2em;
+    }
+
+    #toast-called{
+        top: 1%;
+        width: 300px;
+        padding: 3px 5px;
+        font-size: 1.2em;
+    }
+
+    #btn_add-student{
+        font-size: 1.2em;
+    }
+
+    #switch_dark-mode{
+        position: relative;
+        top: -5px;
+        left: calc(100% - 415px);
+    }
+
+    table > thead > tr > th{
+        font-size: 1.3em;
+        padding: 4px 5px;
+    }
+
+    table > tbody > tr > th{
+        font-size: 1.25em;
+        padding: 4px 5px;
+    }
+
+    table > tbody > tr > td{
+        font-size: 1.25em;
+        padding: 4px 5px;    
+    }
+
+    .th_name{
+        width: 30%; 
+    }
+    
+    .th_grade{
+        width: 20%;
+    }
+    
+    .th_average{
+        width: 15%;
+    }
+    
+    .th_result{
+        width: 15%;
+    }
+    
+    .th_actions{
+        width: 20%;
+    }
+}
+
+@media screen and (min-width: 840px) and (max-width: 855px){
+    .wrapper{
+        width: 95vw;
+    }
+
+    .inputs_container > input{
+        font-size: 1.35em;
+    }
+
+    #toast-sleep{
+        top: 1%;
+        width: 300px;
+        padding: 3px 5px;
+        font-size: 1.2em;
+    }
+
+    #toast-back{
+        top: 1%;
+        width: 300px;
+        padding: 3px 5px;
+        font-size: 1.2em;
+    }
+
+    #toast-called{
+        top: 1%;
+        width: 300px;
+        padding: 3px 5px;
+        font-size: 1.2em;
+    }
+
+    #btn_add-student{
+        font-size: 1.2em;
+    }
+
+    #switch_dark-mode{
+        position: relative;
+        top: -5px;
+        left: calc(100% - 430px);
+    }
+
+    table > thead > tr > th{
+        font-size: 1.3em;
+        padding: 4px 5px;
+    }
+
+    table > tbody > tr > th{
+        font-size: 1.25em;
+        padding: 4px 5px;
+    }
+
+    table > tbody > tr > td{
+        font-size: 1.25em;
+        padding: 4px 5px;    
+    }
+
+    .th_name{
+        width: 30%; 
+    }
+    
+    .th_grade{
+        width: 20%;
+    }
+    
+    .th_average{
+        width: 15%;
+    }
+    
+    .th_result{
+        width: 15%;
+    }
+    
+    .th_actions{
+        width: 20%;
+    }
+}
+
+@media screen and (min-width: 860px) and (max-width: 920px){
+    .wrapper{
+        width: 95vw;
+    }
+
+    .inputs_container > input{
+        font-size: 1.35em;
+    }
+
+    #toast-sleep{
+        top: 1%;
+        width: 300px;
+        padding: 3px 5px;
+        font-size: 1.2em;
+    }
+
+    #toast-back{
+        top: 1%;
+        width: 300px;
+        padding: 3px 5px;
+        font-size: 1.2em;
+    }
+
+    #toast-called{
+        top: 1%;
+        width: 300px;
+        padding: 3px 5px;
+        font-size: 1.2em;
+    }
+
+    #btn_add-student{
+        font-size: 1.2em;
+    }
+
+    #switch_dark-mode{
+        position: relative;
+        top: -5px;
+        left: calc(100% - 457px);
+    }
+
+    table > thead > tr > th{
+        font-size: 1.3em;
+        padding: 4px 5px;
+    }
+
+    table > tbody > tr > th{
+        font-size: 1.25em;
+        padding: 4px 5px;
+    }
+
+    table > tbody > tr > td{
+        font-size: 1.25em;
+        padding: 4px 5px;    
+    }
+
+    .th_name{
+        width: 30%; 
+    }
+    
+    .th_grade{
+        width: 20%;
+    }
+    
+    .th_average{
+        width: 15%;
+    }
+    
+    .th_result{
+        width: 15%;
+    }
+    
+    .th_actions{
+        width: 20%;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1024px){
+    .wrapper{
+        width: 95vw;
+    }
+
+    .inputs_container > input{
+        font-size: 1.4em;
+    }
+
+    #toast-sleep{
+        top: 1%;
+        width: 400px;
+        padding: 3px 0px;
+        font-size: 1.2em;
+    }
+
+    #toast-back{
+        top: 1%;
+        width: 400px;
+        padding: 3px 0px;
+        font-size: 1.2em;
+    }
+
+    #toast-called{
+        top: 1%;
+        width: 400px;
+        padding: 3px 0px;
+        font-size: 1.2em;
+    }
+
+    #btn_add-student{
+        font-size: 1.3em;
+    }
+
+    #switch_dark-mode{
+        position: relative;
+        top: -5px;
+        left: calc(100% - 515px);
+    }
+
+    table > thead > tr > th{
+        font-size: 1.3em;
+        padding: 7px 5px;
+    }
+
+    table > tbody > tr > th{
+        font-size: 1.25em;
+        padding: 7px 5px;
+    }
+
+    table > tbody > tr > td{
+        font-size: 1.25em;
+        padding: 7px 5px;    
+    }
+
+    .th_name{
+        width: 30%; 
+    }
+    
+    .th_grade{
+        width: 20%;
+    }
+    
+    .th_average{
+        width: 15%;
+    }
+    
+    .th_result{
+        width: 15%;
+    }
+    
+    .th_actions{
+        width: 20%;
+    }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1920px){
+    .wrapper{
+        width: 60vw;
+    }
+
+    .inputs_container > input{
+        font-size: 1.4em;
+    }
+    
+    #btn_add-student{
+        font-size: 1.3em;
+    }
+
+    table > thead > tr > th{
+        font-size: 1.3em;
+    }
+
+    table > tbody > tr > th{
+        font-size: 1.25em;
+    }
+
+    table > tbody > tr > td{
+        font-size: 1.25em;
+    }
+
+    #toast-sleep{
+        font-size: 1.2em;
+        top: 2%;
+        width: 300px;
+    }
+
+    #toast-back{
+        font-size: 1.2em;
+        top: 2%;
+        width: 300px;
+    }
+
+    #toast-called{
+        font-size: 1.2em;
+        top: 2%;
+        width: 300px;
+    }
+}
