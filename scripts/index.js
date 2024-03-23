@@ -76,19 +76,25 @@ function addStudent(){
             } else if(average < 7){
                 result = "Reprovado";
             }
-            const id = generateUniqueId();
-            const student = { id, name, n1, n2, average, result };
 
             const studentsData = JSON.parse(localStorage.getItem('studentsData')) || [];
-            studentsData.push(student);
-            localStorage.setItem('studentsData', JSON.stringify(studentsData));
+            const existingStudent = studentsData.find(student => student.name === name);
+            if (existingStudent) {
+                showToast("Este aluno já existe ⚠️");
+            } else {
+                const id = generateUniqueId();
+                const student = { id, name, n1, n2, average, result };
 
-            renderStudent(student);
+                studentsData.push(student);
+                localStorage.setItem('studentsData', JSON.stringify(studentsData));
 
-            html.querySelector("#name").value = "";
-            html.querySelector("#n1").value = "";
-            html.querySelector("#n2").value = "";
-            showToast("Aluno(a) adicionado(a) ✅");
+                renderStudent(student);
+
+                html.querySelector("#name").value = "";
+                html.querySelector("#n1").value = "";
+                html.querySelector("#n2").value = "";
+                showToast("Aluno(a) adicionado(a) ✅");
+            }
         }
     }
 }
