@@ -11,12 +11,14 @@
 </head>
 <body>
     <div class="wrapper">
-        <input type="checkbox" id="switch_dark-mode">
         <div class="inputs_container">
             <input type="text" id="name" placeholder="Nome" autocomplete="name" autofocus required>
             <input type="number" min="0" max="10" id="n1" placeholder="Nota 1ªAv" required>
             <input type="number" min="0" max="10" id="n2" placeholder="Nota 2ªAv" required>
-            <button id="btn_add-student" onclick="addStudent()">Adicionar</button>
+            <button id="btn_add-student" onclick="addStudent()" class="main-btn" ">Adicionar</button>
+            <button id="btn_update-student" onclick="updateStudent()" class="main-btn" ">Atualizar</button>
+            <input type="checkbox" id="switch_dark-mode">
+            <label for="switch_dark-mode" class="material-symbols-outlined">toggle_off</label>
         </div>
         <div class="table_container">
             <p id="toast-sleep"></p> 

@@ -10,7 +10,7 @@
     --main-bg: #fff;
     --main-bgTable: #ffffffef;
     --main-bgToast: #000;
-    --main-bgColumn: #eeeeee;
+    --main-bgColumn: #f8f8f8ec;
     --main-bgBtn: #00ad3d;
     --main-bgInput: #fff;
     --main-bgSwitch: #dbdbdb;
@@ -24,6 +24,9 @@
     --main-modalColor: #fff;
 
     --main-btnHover: #00a03d;
+
+    --main-deleteColor: #000;
+    --main-editColor: #000;
 }
 
 .dark-mode:root{
@@ -40,6 +43,9 @@
     --main-toastColor: #fff;
 
     --main-btnHover: #00ad3d;
+
+    --main-deleteColor: #e00000;
+    --main-editColor: #ffbb00;
 }
 
 body{
@@ -72,7 +78,7 @@ body{
     flex-direction: row;
 
     gap: 4px;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .inputs_container > input{
@@ -84,10 +90,23 @@ body{
 
     border: 1px solid var(--main-borderColor);
     border-radius: 3px;
-    padding: 5px;
+    padding: 3px;
 }
 
-#btn_add-student{
+.inputs_container > input[type="number"]{
+    width: 40%;
+}
+
+#switch_dark-mode {
+    display: none;
+}
+
+#switch_dark-mode + label {
+    cursor: pointer;
+    font-size: 35px;
+}
+
+.main-btn{
     width: 20%;
     font-size: 1em;
     font-weight: bold;
@@ -102,7 +121,7 @@ body{
     cursor: pointer;
 }
 
-#btn_add-student:hover{
+.main-btn:hover{
     background-color: var(--main-btnHover);
 }
 
@@ -183,41 +202,6 @@ body{
     }
 }
 
-#switch_dark-mode{
-    position: absolute;
-    top: 1.4%;
-    left: calc(100% - 70px);
-
-    appearance: none;
-    width: 60px;
-    height: 30px;
-    border-radius: 30px;
-    background-color: var(--main-bgSwitch);
-    transition: all 0.5s ease-in;
-    cursor: pointer;
-}
-
-#switch_dark-mode::before{
-    content: "";
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background-color: var(--main-switchColor);
-    position: absolute;
-    top: 50%;
-    left: 3px;
-    transform: translateY(-50%);
-    transition: all 0.5s ease-in;
-}
-
-#switch_dark-mode:checked{
-    background-color: var(--main-bgBtn);
-}
-
-#switch_dark-mode:checked::before{
-    left: 32px;
-}
-
 table{
     border-collapse: collapse;
     text-align: center;
@@ -255,6 +239,18 @@ table > tbody > tr > td{
     background-color: var(--main-bgTable);
     color: var(--main-textColor);
     border: 1px solid var(--main-borderColor);
+}
+
+.material-symbols-outlined{
+    cursor: pointer;
+}
+
+.material-symbols-outlined.-delete{
+    color: var(--main-deleteColor);
+}
+
+.material-symbols-outlined.-edit{
+    color: var(--main-editColor);
 }
 
 .th_name{
