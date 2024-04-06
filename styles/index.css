@@ -9,7 +9,7 @@
     --main-bg: #fff;
     --main-bgTable: #ffffffef;
     --main-bgToast: #000;
-    --main-bgColumn: #f8f8f8ec;
+    --main-bgColumn: #7c7c7c3f;
     --main-bgBtn: #00ad3d;
     --main-bgInput: #fff;
     --main-bgSwitch: #dbdbdb;
@@ -31,7 +31,7 @@
 
 .dark-mode:root {
     --main-bg: #1a1f29e1;
-    --main-bgTable: #1a1f2986;
+    --main-bgTable: #27353f86;
     --main-bgToast: #000;
     --main-bgColumn: #141414;
     --main-bgBtn: #141414;
@@ -79,6 +79,7 @@ body {
 .inputs_container>input {
     width: 100%;
     font-size: 1em;
+    font-weight: 500;
     color: var(--main-textColor);
     background-color: var(--main-bgInput);
     border: 1px solid var(--main-borderColor);
@@ -91,6 +92,7 @@ body {
 }
 
 #sex {
+    font-size: 1em;
     background-color: var(--main-bgInput);
     color: var(--main-textColor);
     border: 1px solid var(--main-borderColor);

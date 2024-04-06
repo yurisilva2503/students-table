@@ -26,8 +26,8 @@
             </select>
             <input type="number" min="0" max="10" id="n1" placeholder="Nota 1ªAv" required>
             <input type="number" min="0" max="10" id="n2" placeholder="Nota 2ªAv" required>
-            <button id="btn_add-student" onclick="addStudent()" class="main-btn" ">Adicionar</button>
-            <button id="btn_update-student" onclick="updateStudent()" class="main-btn" ">Atualizar</button>
+            <button id="btn_add-student" onclick="addStudent()" class="main-btn" aria-label="Adicionar novo aluno">Adicionar</button>
+            <button id="btn_update-student" onclick="updateStudent()" class="main-btn" aria-label="Atualizar Aluno">Atualizar</button>
             <input type="checkbox" id="switch_dark-mode">
             <label for="switch_dark-mode" class="material-symbols-outlined">toggle_off</label>
         </div>
@@ -36,7 +36,7 @@
             <table id="table">
                 <thead>
                     <tr>
-                        <th scope="col" class="th_img">Foto</th>
+                        <th scope="col" class="th_img">Ícone</th>
                         <th scope="col" class="th_name">Nome</th>
                         <th scope="col" class="th_grade">1ª Av</th>
                         <th scope="col" class="th_grade">2ª Av</th>
