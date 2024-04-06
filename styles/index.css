@@ -23,11 +23,15 @@
     --main-btnHover: #00a03d;
     --main-deleteColor: #000;
     --main-editColor: #000;
+    --main-deleteColor: #e00000;
+    --main-editColor: #d49c00;
+    --main-deleteHover: #000;
+    --main-editHover: #000;
 }
 
 .dark-mode:root {
-    --main-bg: #000000e1;
-    --main-bgTable: #252525e7;
+    --main-bg: #1a1f29e1;
+    --main-bgTable: #1a1f2986;
     --main-bgToast: #000;
     --main-bgColumn: #141414;
     --main-bgBtn: #141414;
@@ -39,6 +43,8 @@
     --main-btnHover: #00ad3d;
     --main-deleteColor: #e00000;
     --main-editColor: #ffbb00;
+    --main-deleteHover: #fff;
+    --main-editHover: #fff;
 }
 
 body {
@@ -82,6 +88,15 @@ body {
 
 .inputs_container>input[type="number"] {
     width: 40%;
+}
+
+#sex {
+    background-color: var(--main-bgInput);
+    color: var(--main-textColor);
+    border: 1px solid var(--main-borderColor);
+    padding: 5px;
+    border-radius: 3px;
+    width: 30%;
 }
 
 #switch_dark-mode {
@@ -218,12 +233,24 @@ table>tbody>tr>td {
     color: var(--main-deleteColor);
 }
 
+.material-symbols-outlined.-delete:hover {
+    color: var(--main-deleteHover);
+}
+
 .material-symbols-outlined.-edit {
     color: var(--main-editColor);
 }
 
+.material-symbols-outlined.-edit:hover {
+    color: var(--main-editHover);
+}
+
+.th_img {
+    width: 10%;
+}
+
 .th_name {
-    width: 40%;
+    width: 30%;
 }
 
 .th_grade {

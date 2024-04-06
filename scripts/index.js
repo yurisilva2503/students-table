@@ -23,6 +23,18 @@ checkbox.addEventListener("change", function () {
   html.classList.toggle("dark-mode");
 });
 
+window.addEventListener('resize', function() {
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth <= 480) {
+    document.getElementById('btn_add-student').textContent = 'Add';
+    document.getElementById('btn_update-student').textContent = 'Att';
+  } else {
+    document.getElementById('btn_add-student').textContent = 'Adicionar';
+    document.getElementById('btn_update-student').textContent = 'Atualizar';
+  }
+});
+
 function applyTheme() {
   const label = document.querySelector(".inputs_container label");
   if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -46,64 +58,65 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function addStudent() {
-  let name = html.querySelector("#name").value;
-  let n1 = html.querySelector("#n1").value;
-  let n2 = html.querySelector("#n2").value;
-
-  n1 = n1.replace(",", ".");
-  n2 = n2.replace(",", ".");
-
-  let name_number_validator = hasNumber(name);
-
-  if (name === null || name === "") {
-    showToast("Insira um nome ⚠️");
-  } else if (name_number_validator == true) {
-    showToast("Nome inválido ❌");
-  } else if (n1 == "" || n2 == "") {
-    showToast("Insira todas as notas ⚠️");
-  } else if (n1 < 0 || n2 < 0 || n1 > 10 || n2 > 10) {
-    showToast("Remova notas maiores que 10 ⚠️");
-  } else {
-    n1 = Number(n1);
-    n2 = Number(n2);
-
-    if (isNaN(n1) == true || isNaN(n2) == true) {
-      showToast("Insira uma nota válida ⚠️");
+    let name = html.querySelector("#name").value;
+    let sex = html.querySelector("#sex").value;
+    let n1 = html.querySelector("#n1").value;
+    let n2 = html.querySelector("#n2").value;
+  
+    n1 = n1.replace(",", ".");
+    n2 = n2.replace(",", ".");
+  
+    let name_number_validator = hasNumber(name);
+  
+    if (name === null || name === "") {
+      showToast("Insira um nome ⚠️");
+    } else if (name_number_validator == true) {
+      showToast("Nome inválido ❌");
+    } else if (n1 == "" || n2 == "") {
+      showToast("Insira todas as notas ⚠️");
+    } else if (n1 < 0 || n2 < 0 || n1 > 10 || n2 > 10) {
+      showToast("Remova notas maiores que 10 ⚠️");
     } else {
-      let average = calcAverage(n1, n2);
-      let result = "";
-
-      if (average >= 7 && average <= 10) {
-        result = "Aprovado";
-      } else if (average < 7) {
-        result = "Reprovado";
-      }
-      const studentsData =
-        JSON.parse(localStorage.getItem("studentsData")) || [];
-      const existingStudent = studentsData.find(
-        (student) =>
-          removeSpacesandToLowerCase(student.name) ===
-          removeSpacesandToLowerCase(name)
-      );
-
-      if (existingStudent) {
-        showToast("Este aluno já existe ⚠️");
+      n1 = Number(n1);
+      n2 = Number(n2);
+  
+      if (isNaN(n1) == true || isNaN(n2) == true) {
+        showToast("Insira uma nota válida ⚠️");
       } else {
-        const id = generateUniqueId();
-        const student = { id, name, n1, n2, average, result };
-
-        studentsData.push(student);
-        localStorage.setItem("studentsData", JSON.stringify(studentsData));
-
-        renderStudent(student);
-
-        html.querySelector("#name").value = "";
-        html.querySelector("#n1").value = "";
-        html.querySelector("#n2").value = "";
-        showToast("Aluno(a) adicionado(a) ✅");
+        let average = calcAverage(n1, n2);
+        let result = "";
+  
+        if (average >= 7 && average <= 10) {
+          result = "Aprovado";
+        } else if (average < 7) {
+          result = "Reprovado";
+        }
+        const studentsData =
+          JSON.parse(localStorage.getItem("studentsData")) || [];
+        const existingStudent = studentsData.find(
+          (student) =>
+            removeSpacesandToLowerCase(student.name) ===
+            removeSpacesandToLowerCase(name)
+        );
+  
+        if (existingStudent) {
+          showToast("Este aluno já existe ⚠️");
+        } else {
+          const id = generateUniqueId();
+          const student = { id, name, sex, n1, n2, average, result };
+  
+          studentsData.push(student);
+          localStorage.setItem("studentsData", JSON.stringify(studentsData));
+  
+          renderStudent(student);
+  
+          html.querySelector("#name").value = "";
+          html.querySelector("#n1").value = "";
+          html.querySelector("#n2").value = "";
+          showToast("Aluno(a) adicionado(a) ✅");
+        }
       }
     }
-  }
 }
 
 function removeSpacesandToLowerCase(text) {
@@ -113,15 +126,24 @@ function removeSpacesandToLowerCase(text) {
 }
 
 function renderStudent(student) {
+  let iconPath = "";
+  if (student.sex === "M") {
+    iconPath = "./assets/images/male-icons/favicon-32x32.png";
+  } else if (student.sex === "F") {
+    iconPath = "./assets/images/female-icons/favicon-32x32.png";
+  } else {
+    iconPath = "./assets/images/male-icons/favicon-32x32.png";
+  }
   tbody.innerHTML += `<tr id='aluno_${student.id}'> 
+        <td class='td_img'> <img src='${iconPath}'> </td>
         <th scope='row' class='th_name-student'> ${student.name.toUpperCase()} </th> 
         <td class='td_nota-01'> ${student.n1} </td> 
         <td class='td_nota-02'> ${student.n2} </td> 
         <td class='td_media'> ${student.average} </td> 
         <td class='td_result'> ${student.result} </td>
         <td class='td_actions'> <span class='material-symbols-outlined -delete' onclick='deleteStudent("${
-          student.id
-        }")'>delete</span> <span class='material-symbols-outlined -edit' onclick='editStudent("${
+    student.id
+  }")'>delete</span> <span class='material-symbols-outlined -edit' onclick='editStudent("${
     student.id
   }")'>edit</span></tr>`;
 }
@@ -196,6 +218,7 @@ function editStudent(id) {
     btnEditStudent.style.display = "block";
 
     html.querySelector("#name").value = student.name;
+    html.querySelector("#sex").value = student.sex;
     html.querySelector("#n1").value = student.n1;
     html.querySelector("#n2").value = student.n2;
 
@@ -205,13 +228,13 @@ function editStudent(id) {
     if (editButton) {
       editButton.style.display = "block";
     }
-
     editingStudentId = id;
   }
 }
 
 function updateStudent() {
   const name = html.querySelector("#name").value;
+  let sex = html.querySelector("#sex").value;
   let n1 = html.querySelector("#n1").value;
   let n2 = html.querySelector("#n2").value;
 
@@ -259,6 +282,8 @@ function updateStudent() {
             result = "Reprovado";
           }
 
+          studentsData[studentIndex].sex = sex;
+
           studentsData[studentIndex].name = name;
           studentsData[studentIndex].n1 = n1;
           studentsData[studentIndex].n2 = n2;
@@ -267,13 +292,8 @@ function updateStudent() {
 
           localStorage.setItem("studentsData", JSON.stringify(studentsData));
 
-          const editedRow = html.querySelector(`#aluno_${editingStudentId}`);
-          editedRow.innerHTML = `<th scope='row' class='th_name-student'> ${name.toUpperCase()} </th> 
-                                             <td class='td_nota-01'> ${n1} </td> 
-                                             <td class='td_nota-02'> ${n2} </td> 
-                                             <td class='td_media'> ${average} </td> 
-                                             <td class='td_result'> ${result} </td>
-                                             <td class='td_actions'> <span style='cursor: pointer' class='material-symbols-outlined -delete' onclick='deleteStudent("${editingStudentId}")'>delete</span> <span style='cursor: pointer' class='material-symbols-outlined -edit' onclick='editStudent("${editingStudentId}")'>edit</span></tr>`;
+          const editedStudent = studentsData[studentIndex];
+          renderUpdatedStudent(editedStudent);
 
           showToast("Aluno(a) atualizado(a) ✅");
           html.querySelector("#name").value = "";
@@ -299,3 +319,27 @@ function updateStudent() {
     }
   }
 }
+
+function renderUpdatedStudent(student) {
+  let iconPath = "";
+  if (student.sex === "M") {
+    iconPath = "./assets/images/male-icons/favicon-32x32.png";
+  } else if (student.sex === "F") {
+    iconPath = "./assets/images/female-icons/favicon-32x32.png";
+  } else {
+    iconPath = "./assets/images/male-icons/favicon-32x32.png"; 
+  }
+
+  const editedRow = html.querySelector(`#aluno_${student.id}`);
+  editedRow.innerHTML = `<td class='td_img'> <img src='${iconPath}'> </td>
+                         <th scope='row' class='th_name-student'> ${student.name.toUpperCase()} </th> 
+                         <td class='td_nota-01'> ${student.n1} </td> 
+                         <td class='td_nota-02'> ${student.n2} </td> 
+                         <td class='td_media'> ${student.average} </td> 
+                         <td class='td_result'> ${student.result} </td>
+                         <td class='td_actions'> 
+                         <span style='cursor: pointer' class='material-symbols-outlined -delete' onclick='deleteStudent("${student.id}")'>delete</span> 
+                         <span style='cursor: pointer' class='material-symbols-outlined -edit' onclick='editStudent("${student.id}")'>edit</span>
+                         </tr>`;
+}
+
