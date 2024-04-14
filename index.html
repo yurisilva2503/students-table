@@ -19,11 +19,6 @@
     <div class="wrapper">
         <div class="inputs_container">
             <input type="text" id="name" placeholder="Nome" autocomplete="name" autofocus required>
-            <select id="sex" required>
-                <option value="M" id="M">Masculino</option>
-                <option value="F" id="F">Feminino</option>
-                <option value="O" id="O">Outro</option>
-            </select>
             <input type="number" min="0" max="10" id="n1" placeholder="Nota 1ªAv" required>
             <input type="number" min="0" max="10" id="n2" placeholder="Nota 2ªAv" required>
             <button id="btn_add-student" onclick="addStudent()" class="main-btn" aria-label="Adicionar novo aluno">Adicionar</button>
@@ -36,7 +31,6 @@
             <table id="table">
                 <thead>
                     <tr>
-                        <th scope="col" class="th_img">Ícone</th>
                         <th scope="col" class="th_name">Nome</th>
                         <th scope="col" class="th_grade">1ª Av</th>
                         <th scope="col" class="th_grade">2ª Av</th>

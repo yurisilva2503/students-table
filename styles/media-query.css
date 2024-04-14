@@ -7,11 +7,6 @@
         font-size: .7em;
         width: 55%;
     }
-    
-    #sex{
-        font-size: .7em;
-        width: 60%;
-    }
 
     #toast-sleep{
         top: calc(50% - 49%);
