@@ -261,9 +261,9 @@ function updateStudent() {
           let result = "";
 
           if (average >= 7 && average <= 10) {
-            result = "Aprovado";
+            result = "Aprovado(a)";
           } else if (average < 7) {
-            result = "Reprovado";
+            result = "Reprovado(a)";
           }
 
           studentsData[studentIndex].name = name;
